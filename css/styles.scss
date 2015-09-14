@@ -88,7 +88,7 @@ input[type="checkbox"] + label span {
 }
 
 // Cross out the item once it's been checked off
-input[type="checkbox"]:checked label {
+input[type="checkbox"]:checked + label {
 	color: #ccc;
 	text-decoration: line-through;
 

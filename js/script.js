@@ -4,7 +4,7 @@ app.controller("todoCtrl", function($scope, $http) {
 	$scope.taskList = [];
 	$scope.completedTasks = 0;
 
-	$http.get("https://api.myjson.com/bins/3pxvwX")
+	$http.get("https://api.myjson.com/bins/3pxvw")
 		.success(function(result) {
 			$scope.taskList = result.data;
 		})
