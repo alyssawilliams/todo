@@ -1,0 +1,79 @@
+* { box-sizing: border-box; }
+
+.wrapper {
+		display: flex;
+		justify-content: center;
+		background-color: white;
+}
+
+h1 {
+	font-family: "Delius Unicase";
+	font-size: 3em;
+	padding: 20px 20px 30px;
+	text-transform: uppercase;
+	color: #CD4B4B;
+}
+
+.list {
+	background-color: beige;
+	padding: 25px;
+	margin: 25px;
+}
+
+.item {
+	margin: 5px 10px;
+	position: relative;
+	
+	label {
+		font-family: "Open Sans";
+		font-size: 1.5em;
+	}
+}
+
+// Actual checkbox
+input[type="checkbox"] { visibility: hidden; }
+
+// Fake checkbox
+input[type="checkbox"] + label span {
+	position: absolute;
+	display: block;
+	top: 5px;
+	left: 1px;
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	background-color: white;
+	border: 1px solid #888;
+	border-radius: 4px;
+	cursor: pointer;
+	z-index: 0;
+	margin: -1px -5px 0;
+}
+
+// Cross out the item once it's been checked off
+input[type="checkbox"]:checked {
+	
+		& + label {
+		color: #888;
+		text-decoration: line-through;
+			
+			// Fake check
+			span:after {
+				content: "";
+				width: 9px;
+				height: 5px;
+				position: absolute;
+				top: 2px;
+				left: 3px;
+				border: 3px solid #888;
+				border-top: none;
+				border-right: none;
+				transform: rotate(-45deg);
+			}
+		}
+}
+
+.error {
+	text-align: center;
+	color: #CD4B4B;
+}
