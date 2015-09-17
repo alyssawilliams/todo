@@ -116,8 +116,6 @@ input[type="checkbox"]:checked + label {
 	font-size: 1.7em;
 }
 
-.done { display: none; }
-
 // When the JSON file doesn't load
 .list-wrapper.error {
 	min-width: 350px;
@@ -125,7 +123,6 @@ input[type="checkbox"]:checked + label {
 }
 
 h4.error {
-		display: none;
 		font-size: 1.4em;
 		text-align: center;
 		margin: 20px 0;

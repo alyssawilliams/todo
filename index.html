@@ -4,7 +4,6 @@
     <title>Clerk To-Do List</title>
     <meta charset="utf-8">
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 		<script src="/js/script.js"></script>
 
@@ -15,7 +14,7 @@
   <body>
 
 	  <div class="list-wrapper">
-	    <div class="list" ng-cloak>
+	    <div class="list" ng-hide="error" ng-cloak>
 	    	<h1 class="heading">Don't Forget To...</h1>
 	    	    <form>
 	    
@@ -24,10 +23,10 @@
 	    	        <label for="task-{{$index}}">{{ task.descrip }}<span></span></label>
 	    	      </div>
 	    	    </form>
-	    	    <h3 class="count">{{completedTasks}} out of {{taskList.length}} tasks completed</h3>
-	    				<h3 class="done">You're done!</h3>
+	    	    <h3 class="count" ng-hide="done">{{completedTasks}} out of {{taskList.length}} tasks completed</h3>
+	    				<h3 class="done" ng-show="done">You're done!</h3>
   			</div>
-  			<h4 class="error">Error loading data :(<h4>
+  			<h4 class="error" ng-show="error">Error loading data :(<h4>
 
 	  </div>		
 

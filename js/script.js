@@ -3,15 +3,15 @@ app.controller("todoCtrl", function($scope, $http) {
 
 	$scope.taskList = [];
 	$scope.completedTasks = 0;
+	$scope.error = false;
+	$scope.done = false;
 
 	$http.get("https://api.myjson.com/bins/3pxvw")
 		.success(function(result) {
 			$scope.taskList = result.data;
 		})
 		.error(function (data, status, headers, config) {
-			$(".list").hide();
-			$(".list-wrapper").addClass("error");
-			$("h4").css("display", "block");
+			$scope.error = true;
 		});
 
 		$scope.completeTask = function($index) {
@@ -23,12 +23,10 @@ app.controller("todoCtrl", function($scope, $http) {
 			}
 
 			if ($scope.completedTasks == $scope.taskList.length) {
-	 			$(".count").hide();
-	 			$(".done").css("display", "block");
+				$scope.done = true;
 	 		}
 	 		else {
-	 			$(".done").hide();
-	 			$(".count").css("display", "block");
+	 			$scope.done = false;
 	 		}
 	 	};
 });
