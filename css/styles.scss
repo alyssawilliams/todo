@@ -68,6 +68,7 @@ form { padding: 15px 0; }
 	label {
 	  font-family: $main-font;
 		font-size: 1.1em;
+		cursor: pointer;
 	}
 }
 
@@ -119,11 +120,9 @@ input[type="checkbox"]:checked + label {
 // When the JSON file doesn't load
 .list-wrapper.error {
 	min-width: 350px;
-	padding: 10px 0;
 }
 
 h4.error {
 		font-size: 1.4em;
 		text-align: center;
-		margin: 20px 0;
 }

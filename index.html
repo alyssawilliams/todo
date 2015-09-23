@@ -13,22 +13,24 @@
   </head>
   <body>
 
-	  <div class="list-wrapper">
-	    <div class="list" ng-hide="error" ng-cloak>
+	  <div class="list-wrapper" ng-class="{'error' : allTasks=='error'}">
+	    <div class="list" ng-hide="allTasks=='error'" ng-cloak>
 	    	<h1 class="heading">Don't Forget To...</h1>
-	    	    <form>
-	    
-	    	      <div class="item" ng-repeat="task in taskList">
-	    	        <input type="checkbox" id="task-{{$index}}" ng-model="task.completed" ng-change="completeTask($index)" />
-	    	        <label for="task-{{$index}}">{{ task.descrip }}<span></span></label>
-	    	      </div>
-	    	    </form>
-	    	    <h3 class="count" ng-hide="done">{{completedTasks}} out of {{taskList.length}} tasks completed</h3>
-	    				<h3 class="done" ng-show="done">You're done!</h3>
-  			</div>
-  			<h4 class="error" ng-show="error">Error loading data :(<h4>
 
-	  </div>		
+    	    <form>
+    	      <div class="item" ng-repeat="task in taskList">
+    	        <input type="checkbox" id="task-{{$index}}" ng-true-value="'completed'" ng-false-value="'todo'" ng-model="task.status" ng-change="completeTask(task)" />
+    	        <label for="task-{{$index}}">{{ task.descrip }}<span></span></label>
+    	      </div>
+    	    </form>
 
+	  	 		<div class="switchMessage" ng-switch="allTasks">
+						<h3 class="count" ng-switch-default>{{completedTasks}} out of {{taskList.length}} tasks completed</h3>
+						<h3 class="done" ng-switch-when="done">You're done!</h3>
+						<h4 class="error" ng-switch-when="error">Error loading data :(<h4>
+					</div>
+			</div>
+		</div>
+		
   </body>
 </html>

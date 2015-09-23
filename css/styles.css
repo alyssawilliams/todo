@@ -98,7 +98,8 @@ form {
   position: relative; }
   .item label {
     font-family: "Open Sans";
-    font-size: 1.1em; }
+    font-size: 1.1em;
+    cursor: pointer; }
 
 input[type="checkbox"] {
   visibility: hidden; }
@@ -139,12 +140,10 @@ input[type="checkbox"]:checked + label {
   font-size: 1.7em; }
 
 .list-wrapper.error {
-  min-width: 350px;
-  padding: 10px 0; }
+  min-width: 350px; }
 
 h4.error {
   font-size: 1.4em;
-  text-align: center;
-  margin: 20px 0; }
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
